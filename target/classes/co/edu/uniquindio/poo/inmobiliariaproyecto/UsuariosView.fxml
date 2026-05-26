@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox spacing="10" style="-fx-padding:15;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.uniquindio.poo.inmobiliariaproyecto.viewController.UsuariosViewController">
+    <Label text="Gestión de Usuarios" style="-fx-font-size:15;-fx-font-weight:bold;"/>
+    <HBox spacing="15">
+        <VBox spacing="6" style="-fx-border-color:#aaa;-fx-padding:10;" prefWidth="300">
+            <Label text="Registrar Usuario" style="-fx-font-weight:bold;"/>
+            <Label text="ID:"/><TextField fx:id="txtId" promptText="ID interno"/>
+            <Label text="Nombre:"/><TextField fx:id="txtNombre" promptText="Nombre completo"/>
+            <Label text="Identificación:"/><TextField fx:id="txtIdentificacion" promptText="Cédula"/>
+            <Label text="Teléfono:"/><TextField fx:id="txtTelefono" promptText="Teléfono"/>
+            <Label text="Correo:"/><TextField fx:id="txtCorreo" promptText="Correo"/>
+            <Label text="Tipo:"/><ComboBox fx:id="cmbTipo" prefWidth="200"/>
+            <HBox spacing="6">
+                <Button text="Registrar" onAction="#registrarUsuario" prefWidth="90"/>
+                <Button text="Actualizar" onAction="#actualizarUsuario" prefWidth="90"/>
+                <Button text="Eliminar" onAction="#eliminarUsuario" prefWidth="90"/>
+            </HBox>
+            <Button text="Limpiar" onAction="#limpiarFormulario" prefWidth="200"/>
+            <Label fx:id="lblMensaje" wrapText="true"/>
+        </VBox>
+        <VBox spacing="5" HBox.hgrow="ALWAYS">
+            <Label text="Usuarios Registrados" style="-fx-font-weight:bold;"/>
+            <TableView fx:id="tablaUsuarios" prefHeight="420" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
+                    <TableColumn fx:id="colNombre" text="Nombre" prefWidth="130"/>
+                    <TableColumn fx:id="colIdentificacion" text="Identificación" prefWidth="110"/>
+                    <TableColumn fx:id="colTelefono" text="Teléfono" prefWidth="100"/>
+                    <TableColumn fx:id="colCorreo" text="Correo" prefWidth="150"/>
+                    <TableColumn fx:id="colTipo" text="Tipo" prefWidth="90"/>
+                    <TableColumn fx:id="colPuntos" text="Puntos" prefWidth="70"/>
+                    <TableColumn fx:id="colClasificacion" text="Rango" prefWidth="130"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </HBox>
+</VBox>

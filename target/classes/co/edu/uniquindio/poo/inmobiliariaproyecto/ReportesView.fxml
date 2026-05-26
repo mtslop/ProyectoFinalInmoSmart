@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox spacing="10" style="-fx-padding:15;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.uniquindio.poo.inmobiliariaproyecto.viewController.ReportesViewController">
+    <Label text="Reportes del Sistema" style="-fx-font-size:15;-fx-font-weight:bold;"/>
+    <FlowPane hgap="8" vgap="8">
+        <Button text="Inmuebles Vendidos/Arrendados" onAction="#reporteTransacciones" prefWidth="200"/>
+        <Button text="Ciudades con Mayor Demanda" onAction="#reporteCiudades" prefWidth="200"/>
+        <Button text="Compradores Más Activos" onAction="#reporteCompradores" prefWidth="200"/>
+        <Button text="Vendedores con Más Propiedades" onAction="#reporteVendedores" prefWidth="210"/>
+    </FlowPane>
+    <HBox spacing="10">
+        <Button text="Recomendaciones para Comprador" onAction="#abrirRecomendaciones" prefWidth="230"/>
+        <ComboBox fx:id="cmbComprador" promptText="Seleccionar comprador" prefWidth="250"/>
+    </HBox>
+    <TextArea fx:id="txtReporte" prefHeight="400" editable="false"
+              style="-fx-font-family:monospace;-fx-font-size:12;" wrapText="true" VBox.vgrow="ALWAYS"/>
+</VBox>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox spacing="10" style="-fx-padding:15;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.uniquindio.poo.inmobiliariaproyecto.viewController.InmueblesViewController">
+    <Label text="Gestión de Inmuebles" style="-fx-font-size:15;-fx-font-weight:bold;"/>
+    <TitledPane text="Buscar Inmuebles" expanded="false">
+        <HBox spacing="10" style="-fx-padding:8;">
+            <VBox spacing="4"><Label text="Ciudad:"/><TextField fx:id="txtBusCiudad" promptText="Ciudad"/></VBox>
+            <VBox spacing="4"><Label text="Tipo:"/><ComboBox fx:id="cmbBusTipo" prefWidth="130"/></VBox>
+            <VBox spacing="4"><Label text="Precio máx:"/><TextField fx:id="txtBusPrecioMax" promptText="0=sin límite"/></VBox>
+            <VBox spacing="4"><Label text="Área mín:"/><TextField fx:id="txtBusAreaMin" promptText="0=sin límite"/></VBox>
+            <VBox spacing="4"><Label text=" "/><Button text="Buscar" onAction="#buscarInmuebles" prefWidth="80"/></VBox>
+        </HBox>
+    </TitledPane>
+    <HBox spacing="15">
+        <VBox spacing="6" style="-fx-border-color:#aaa;-fx-padding:10;" prefWidth="300">
+            <Label text="Publicar Inmueble" style="-fx-font-weight:bold;"/>
+            <Label text="Código:"/><TextField fx:id="txtCodigo" promptText="Ej: INM-001"/>
+            <Label text="Tipo:"/><ComboBox fx:id="cmbTipoInmueble" prefWidth="200" onAction="#mostrarCamposEspecificos"/>
+            <Label text="Dirección:"/><TextField fx:id="txtDireccion" promptText="Dirección"/>
+            <Label text="Ciudad:"/><TextField fx:id="txtCiudad" promptText="Ciudad"/>
+            <Label text="Área (m²):"/><TextField fx:id="txtArea" promptText="Área"/>
+            <Label text="Precio:"/><TextField fx:id="txtPrecio" promptText="Precio"/>
+            <Label text="Vendedor:"/><ComboBox fx:id="cmbVendedor" prefWidth="200"/>
+            <VBox fx:id="vboxEspecifico" spacing="5"/>
+            <HBox spacing="6">
+                <Button text="Publicar" onAction="#publicarInmueble" prefWidth="88"/>
+                <Button text="Actualizar" onAction="#actualizarInmueble" prefWidth="88"/>
+                <Button text="Eliminar" onAction="#eliminarInmueble" prefWidth="88"/>
+            </HBox>
+            <Button text="Limpiar" onAction="#limpiarFormulario" prefWidth="200"/>
+            <Label fx:id="lblMensaje" wrapText="true"/>
+        </VBox>
+        <VBox spacing="5" HBox.hgrow="ALWAYS">
+            <Label text="Catálogo de Inmuebles" style="-fx-font-weight:bold;"/>
+            <TableView fx:id="tablaInmuebles" prefHeight="400" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colCodigo" text="Código" prefWidth="80"/>
+                    <TableColumn fx:id="colTipo" text="Tipo" prefWidth="100"/>
+                    <TableColumn fx:id="colDireccion" text="Dirección" prefWidth="130"/>
+                    <TableColumn fx:id="colCiudad" text="Ciudad" prefWidth="90"/>
+                    <TableColumn fx:id="colArea" text="Área" prefWidth="60"/>
+                    <TableColumn fx:id="colPrecio" text="Precio" prefWidth="100"/>
+                    <TableColumn fx:id="colEstado" text="Estado" prefWidth="90"/>
+                    <TableColumn fx:id="colVendedor" text="Vendedor" prefWidth="110"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </HBox>
+</VBox>
