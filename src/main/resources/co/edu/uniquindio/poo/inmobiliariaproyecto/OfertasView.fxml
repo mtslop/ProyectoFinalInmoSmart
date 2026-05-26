@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox spacing="10" style="-fx-padding:15;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.uniquindio.poo.inmobiliariaproyecto.viewController.OfertasViewController">
+    <Label text="Gestión de Ofertas" style="-fx-font-size:15;-fx-font-weight:bold;"/>
+    <HBox spacing="15">
+        <VBox spacing="6" style="-fx-border-color:#aaa;-fx-padding:10;" prefWidth="300">
+            <Label text="Nueva Oferta" style="-fx-font-weight:bold;"/>
+            <Label text="Código Oferta:"/><TextField fx:id="txtCodigoOferta" promptText="Ej: OFR-001"/>
+            <Label text="Comprador:"/><ComboBox fx:id="cmbComprador" prefWidth="200"/>
+            <Label text="Inmueble:"/><ComboBox fx:id="cmbInmueble" prefWidth="200"/>
+            <Label text="Valor Oferta:"/><TextField fx:id="txtValorOferta" promptText="Valor ofrecido"/>
+            <HBox spacing="6">
+                <Button text="Registrar" onAction="#registrarOferta" prefWidth="90"/>
+                <Button text="Eliminar" onAction="#eliminarOferta" prefWidth="90"/>
+            </HBox>
+            <Separator/>
+            <Label text="Responder Oferta" style="-fx-font-weight:bold;"/>
+            <Label text="Código a responder:"/><TextField fx:id="txtCodigoResponder" promptText="Código oferta"/>
+            <HBox spacing="6">
+                <Button text="Aceptar" onAction="#aceptarOferta" prefWidth="90"/>
+                <Button text="Rechazar" onAction="#rechazarOferta" prefWidth="90"/>
+            </HBox>
+            <Label fx:id="lblMensaje" wrapText="true"/>
+        </VBox>
+        <VBox spacing="5" HBox.hgrow="ALWAYS">
+            <Label text="Listado de Ofertas" style="-fx-font-weight:bold;"/>
+            <TableView fx:id="tablaOfertas" prefHeight="430" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colCodigo" text="Código" prefWidth="90"/>
+                    <TableColumn fx:id="colComprador" text="Comprador" prefWidth="130"/>
+                    <TableColumn fx:id="colInmueble" text="Inmueble" prefWidth="130"/>
+                    <TableColumn fx:id="colValor" text="Valor" prefWidth="110"/>
+                    <TableColumn fx:id="colFecha" text="Fecha" prefWidth="100"/>
+                    <TableColumn fx:id="colEstado" text="Estado" prefWidth="90"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </HBox>
+</VBox>
